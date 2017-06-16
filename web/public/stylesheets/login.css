@@ -1,0 +1,26 @@
+.top{width:960px; min-width:900px;background-color: #FFFFFF;margin:50px auto 0; }
+/*.top .topcontent{ width:900px; height:90px; margin:0 auto;}*/
+.top .topcontent .topleft{ float:left;  padding-top:40px;}
+.top .topcontent .topright{ float:right; font-size:18px;  padding-top:40px;}
+.top .topcontent .topright span{ color:#e8340c;}
+
+/*.content{width:960px;min-height:540px;*/
+/*!*background:url(../../images/pen/loginform.jpg) 0 0 no-repeat;*!*/
+/*padding-top:10px;margin:0 auto;*/
+/*}*/
+.tit,.titpwd{width:30px;height:36px;display: inline-block;float:left;margin:0;}
+.conright{position:relative;float:right;width:340px;height:200px;margin:100px auto;}
+.inputDiv li{width:100%;height:40px;line-height:40px;margin-top:15px;}
+.inputDiv li input{width:258px;height:32px;float:right;line-height: 32px;padding:0 3px;margin-left:1px;border:0;margin-top:5px;}
+.inputDiv li input[type='checkbox']{float:left;width: 16px;margin:5px 5px 30px;display: inline;padding-left:30px;}
+.styButon{border-radius:3px;margin-left:33px;width:113px!important;height:36px;text-align: center;color:#ffffff;background-color: #EE3147;font-size: 18px;display:inline-block;border: none;}
+.inputDiv li label{font: 14px/150% tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\u5b8b\u4f53",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #666;}
+.inputDiv li.peninput{border: solid 1px #ddd;padding-left:10px;line-height:42px;}
+.pen_login{width:400px;margin:500px auto 0px;}
+.pen_top .pen_left{position:absolute;top:15px;left:15px;}
+.pen_top .pen_right{position:absolute;top:88px;right:46px;}
+.plogin_btn{overflow:hidden}
+/*.plogin_btn .pen_left{width:230px;float:left}*/
+/*.plogin_btn .pen_right{width:110px;float:right}*/

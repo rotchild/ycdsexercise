@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的远程系统</title>
+    <link href="public/stylesheets/login.css" rel="stylesheet" type="text/css"/>
+</head>
+<body style="background:url('images/pen/loginbg.jpg') repeat-x;">
+<div class="pen_top">
+
+    <div class="pen_left">
+       <img src="images/pen/logoIndex.jpg">
+    </div>
+    <div class="pen_right">
+        <img src="images/pen/ren_word.png">
+    </div>
+
+</div>
+<div class="centercontent pen_login">
+    <div class=conright">
+        <form name="ttLogonForm" id="ttLogonForm" target="">
+            <ul class="inputDiv">
+                <li class="peninput">
+                    <label for="username">用&nbsp;户&nbsp;名</label>
+
+                    <input type="text" class="name" maxlength="26" name="username" id="username"
+                           placeholder="请输入用户名">
+                </li>
+                <li class="peninput">
+                    <label for="usrname">密&nbsp;&nbsp;&nbsp;码</label>
+                    <input type="password" class="name" maxlength="26" name="password" id="password"
+                            placeholder="请输入密码">
+                </li>
+
+                <li>
+                    <span style="width:120px;float:left">
+                        <input type="checkbox" style="float:left" id="userCode_Cookie">
+                        记住用户名
+                    </span>
+                    <span style="width:120px;float:right">
+                        <input class="styButon" type="button" value="登录"  style="display:inline-block"
+                        onclick="login()">
+                    </span>
+
+                </li>
+
+            </ul>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="resources/jquery-1.8.2.min.js"></script>
+<script src="resources/MD5.js"></script>
+<script type="text/javascript">
+/*    function trim(a){
+        return a
+    }*/
+function login() {
+    setCookie();
+var username = document.getElementById("username").value;
+var password=document.getElementById("password").value;
+
+    console.log("username"+username+"password"+password);
+    if(username!=""&&password!=""){
+       /* alert(username+password);*/
+        $.ajax({
+            type: 'POST',
+            dataType: "json",
+            timeout: 3000,
+            url: '../api/Public/LoginCheck',
+            data: {
+                username: username,
+                password: password,
+                RandomTag: Math.random()
+            },
+            success:function(result){
+                if(result.success){
+                    window.location.href="DingsunMS/"
+
+                }else{
+
+                    alert('result.err'+result.err.message)
+
+                }
+
+            },
+            error:function(response){
+                alert('response.err'+response.err)
+
+            }
+        });
+    }else{
+        alert("用户名或密码不能为空");
+    }
+    }
+
+function setCookie(){
+    var username=document.getElementById("username").value;
+    var checkstate=document.getElementById("userCode_Cookie").value;
+    if(checkstate){
+        document.cookie="username"+username;
+    }else{
+        document.cookie="username"+"userCode_Cookie616"
+
+    }
+
+}
+</script>
+</body>
+</html>
